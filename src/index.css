@@ -20,9 +20,6 @@ html {
 body {
   height: 100vh;
   color: #495057;
-  display: flex;
-  align-items: center;
-  justify-content: center;
 }
 
 .app {
@@ -30,14 +27,33 @@ body {
   display: grid;
   grid-template-columns: 44rem 44rem;
   column-gap: 4rem;
-  align-items: start;
+  align-items: center;
+  padding: 50px;
+  justify-content: center;
 }
 @media (max-width: 900px) {
   .app {
-    grid-template-columns: 44rem;
+    grid-template-columns: 80%;
+    padding: 10px;
   }
   form {
     margin-top: 3rem;
+  }
+}
+@media (max-width: 550px) {
+  .app {
+    grid-template-columns: 95%;
+  }
+  form {
+    margin-top: 3rem;
+  }
+  html {
+    font-size: 40%;
+  }
+}
+@media (max-width: 330px) {
+  html {
+    font-size: 25%;
   }
 }
 .button {

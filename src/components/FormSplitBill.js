@@ -20,16 +20,24 @@ export default function FormSplitBill({ selectedFriend, onSplitBill }) {
       <input
         type="text"
         value={bill}
-        onChange={(e) => setBill(Number(e.target.value))}
+        onChange={(e) => {
+          if (isNaN(e.target.value)) {
+            return;
+          }
+          setBill(Number(e.target.value));
+        }}
       ></input>
 
       <label>🙎‍♂️Your expense</label>
       <input
         type="text"
         value={paid}
-        onChange={(e) =>
-          setPaid(Number(e.target.value) > bill ? paid : Number(e.target.value))
-        }
+        onChange={(e) => {
+          if (isNaN(e.target.value)) return;
+          setPaid(
+            Number(e.target.value) > bill ? paid : Number(e.target.value)
+          );
+        }}
       ></input>
 
       <label>👩🏻‍🤝‍👩🏻{selectedFriend.name}'s expense</label>
